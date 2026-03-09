@@ -90,7 +90,7 @@ public class ThaumcraftPatches {
                     );
                 }
             })
-			.apply(builder -> {
+            .apply(builder -> {
                 ItemStack gem = new ItemStack(ModItems.manaResource, 1, Constants.MANARESOURCE_META_DIAMOND);
                 ItemStack block = OreDictionary.getOres("blockBlackMetal").get(0);
                 builder.addInfusionRecipe(
@@ -99,7 +99,7 @@ public class ThaumcraftPatches {
                     6,
                     new ItemStack(ModBlocks.flower, 1, 15),
                     block, gem, gem, block, gem, gem
-			    );
+                );
             })
             .commit();
 
