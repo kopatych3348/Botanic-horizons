@@ -90,6 +90,17 @@ public class ThaumcraftPatches {
                     );
                 }
             })
+			.apply(builder -> {
+                ItemStack gem = new ItemStack(ModItems.manaResource, 1, Constants.MANARESOURCE_META_DIAMOND);
+                ItemStack block = OreDictionary.getOres("blockBlackMetal").get(0);
+                builder.addInfusionRecipe(
+                    new AspectList().add(Aspect.PLANT, 16).add(Aspect.EXCHANGE, 16).add(Aspect.SENSES, 32).add(Aspect.DARKNESS, 64),
+                    new ItemStack(ModItems.blackLotus, 1, 0),
+                    6,
+                    new ItemStack(ModBlocks.flower, 1, 15),
+                    block, gem, gem, block, gem, gem
+			    );
+            })
             .commit();
 
         // flowers back into mushrooms
